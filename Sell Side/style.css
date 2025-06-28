@@ -1,0 +1,133 @@
+/* Font and Layout */
+html, body, [class^="css"] {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #121212;
+    color: #f0f0f0;
+}
+
+/* Navbar */
+.navbar {
+    background: linear-gradient(90deg, #2196f3, #21cbf3);
+    color: white;
+    padding: 20px;
+    font-size: 32px;
+    font-weight: 600;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Tabs */
+button[data-baseweb="tab"] {
+    background-color: #1e1e1e !important;
+    color: #e0e0e0 !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    margin-right: 6px !important;
+    border-radius: 8px !important;
+    padding: 10px 16px !important;
+    transition: all 0.3s ease !important;
+    border: none !important;
+    cursor: pointer;
+}
+
+button[data-baseweb="tab"]:hover {
+    background-color: #ffffff !important;
+    color: #121212 !important;
+    font-weight: 700 !important;
+    font-style: italic !important;
+    border: 1px solid #2196f3 !important;
+}
+
+button[data-baseweb="tab"][aria-selected="true"] {
+    background-color: #2196f3 !important;
+    color: #ffffff !important;
+    font-weight: 800 !important;
+    font-style: normal !important;
+    box-shadow: inset 0 -3px 0 #00e5ff !important;
+}
+
+/* Sidebar */
+section[data-testid="stSidebar"] {
+    background-color: #1f1f1f;
+    color: white;
+}
+
+/* Metrics */
+[data-testid="metric-container"] {
+    background-color: #232323;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px 0;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    color: #00e5ff;
+}
+
+/* Matrix Table */
+.stDataFrame > div > div > div > table tbody tr:hover {
+    background-color: #1565c0 !important;
+    color: #ffffff !important;
+    font-weight: bold !important;
+    cursor: pointer;
+}
+
+.stDataFrame td:hover {
+    background-color: #1e88e5 !important;
+    color: #ffffff !important;
+    font-weight: bold !important;
+    cursor: pointer;
+}
+
+/* Plots */
+.stPlotlyChart {
+    background-color: #1f1f1f;
+    padding: 12px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+/* Buttons */
+button {
+    background-color: #2196f3 !important;
+    color: white !important;
+    font-weight: 600 !important;
+    border-radius: 8px !important;
+    padding: 10px 20px !important;
+    transition: all 0.2s ease-in-out !important;
+}
+
+button:hover {
+    background-color: #1976d2 !important;
+}
+/* === Style Tab Buttons === */
+button[data-baseweb="tab"] {
+    background-color: #1e1e1e !important;
+    color: #e0e0e0 !important;
+    font-size: 18px !important;     /* 👈 Larger font size */
+    font-weight: bold !important;   /* 👈 Bold font */
+    margin-right: 6px !important;
+    border-radius: 8px !important;
+    padding: 12px 20px !important;
+    transition: all 0.3s ease-in-out !important;
+    border: none !important;
+    cursor: pointer;
+}
+
+/* === Hover Effect === */
+button[data-baseweb="tab"]:hover {
+    background-color: #ffffff !important;
+    color: #121212 !important;
+    font-weight: 700 !important;
+    font-style: italic !important;
+    border: 1px solid #2196f3 !important;
+}
+
+/* === Active (Selected) Tab === */
+button[data-baseweb="tab"][aria-selected="true"] {
+    background-color: #2196f3 !important;
+    color: #ffffff !important;
+    font-weight: 800 !important;
+    font-style: normal !important;
+    box-shadow: inset 0 -3px 0 #00e5ff !important;
+}

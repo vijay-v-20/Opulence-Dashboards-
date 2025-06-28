@@ -1,0 +1,118 @@
+/* --- Import Google Font --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* --- Base Font & Layout --- */
+html, body, * {
+    font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif !important;
+    font-size: 15px !important;
+}
+
+/* --- Navbar --- */
+.navbar {
+    background: linear-gradient(90deg, #0072C6, #00C6FF);
+    padding: 20px 28px;
+    border-radius: 12px;
+    color: #ffffff;
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* --- Sidebar Styling (Fixed Font Color for Readability) --- */
+section[data-testid="stSidebar"] {
+    background-color: #f9fbfd !important;
+    padding: 24px 16px;
+    border-right: 1px solid #dee2e6;
+}
+
+section[data-testid="stSidebar"] * {
+    color: #1a1a1a !important;  /* Dark readable font */
+    font-family: 'Inter', 'Segoe UI', sans-serif !important;
+}
+
+/* Fix for checkboxes, multiselects, slider labels */
+.css-16idsys, .css-1c7y2kd, .css-1v0mbdj, .css-1lcbmhc, .css-1n76uvr {
+    color: #1a1a1a !important;
+    font-weight: 500 !important;
+}
+
+/* --- Metrics Styling --- */
+div[data-testid="metric-container"] {
+    background-color: #ffffff;
+    padding: 16px;
+    border-radius: 10px;
+    border: 1px solid #e6e6e6;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+    text-align: center;
+}
+
+div[data-testid="metric-container"] > label {
+    font-size: 14px !important;
+    color: #6c757d !important;
+}
+
+div[data-testid="metric-container"] > div {
+    font-size: 22px !important;
+    font-weight: 600 !important;
+    color: #0072C6 !important;
+}
+
+/* --- Tabs Styling --- */
+button[data-baseweb="tab"] {
+    font-size: 15px !important;
+    color: #171515 !important;
+    background-color: #f4f4f4 !important;
+    border: none !important;
+    border-radius: 5px 5px 0 0 !important;
+    padding: 10px 20px !important;
+    margin-right: 4px !important;
+    font-weight: 500 !important;
+}
+
+button[data-baseweb="tab"]:hover {
+    background-color: #0072C6 !important;
+    color: white !important;
+}
+
+button[data-baseweb="tab"][aria-selected="true"] {
+    background-color: #0072C6 !important;
+    color: white !important;
+    font-weight: 600 !important;
+}
+
+/* --- Buttons --- */
+.stButton>button {
+    background-color: #0072C6 !important;
+    color: white !important;
+    padding: 10px 20px !important;
+    border-radius: 6px !important;
+    font-weight: 600 !important;
+    border: none !important;
+    font-family: 'Inter', sans-serif !important;
+}
+
+.stButton>button:hover {
+    background-color: #005fa3 !important;
+    color: #fff !important;
+}
+
+/* --- DataFrame Styling --- */
+.stDataFrame {
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    overflow: hidden;
+    font-size: 14px;
+}
+
+/* --- Chart Text (SVG) --- */
+svg text {
+    fill: #eaedf0 !important;
+    font-family: 'Inter', sans-serif !important;
+}
+
+/* --- Hide Streamlit Branding --- */
+#MainMenu, footer, header {
+    visibility: hidden;
+}
