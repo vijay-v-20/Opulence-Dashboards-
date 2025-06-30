@@ -194,7 +194,7 @@ st.markdown('<div class="navbar">💼 Sell Side Committee Dashboard</div>', unsa
 
 # ✅ Load data
 from pathlib import Path
-excel_path = Path(__file__).parent / "vs.xlsx"
+excel_path = Path(__file__).parent / "SellSide.xlsx"
 df = pd.read_excel(excel_path)
 
 df = df.dropna(how='all')
