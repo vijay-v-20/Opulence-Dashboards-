@@ -7,16 +7,23 @@ st.set_page_config(page_title="Buy Side Committee Dashboard", layout="wide")
 
 
 # Load external CSS
-def load_css(file_name):
-    with open(file_name) as f:
+from pathlib import Path
+
+def load_css(filename):
+    css_path = Path(__file__).parent / filename
+    with open(css_path) as f:
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
-load_css("style.css")  # Ensure this file is in the same directory
+load_css("style.css")
+
 # Top navbar
 st.markdown('<div class="navbar">📊 Strategic Buy Side Committee Dashboard</div>', unsafe_allow_html=True)
 
 # Load data
-df = pd.read_excel("BuySide.xlsx")
+from pathlib import Path
+excel_path = Path(__file__).parent / "vs.xlsx"
+df = pd.read_excel(excel_path)
+
 df = df.dropna(how='all')
 
 # --- Sidebar Filters ---

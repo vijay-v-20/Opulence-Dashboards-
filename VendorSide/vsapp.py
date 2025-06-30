@@ -20,7 +20,10 @@ load_css("style.css")
 st.markdown('<div class="navbar">📦 Vendor Management Dashboard</div>', unsafe_allow_html=True)
 
 # --- Load and Clean Data ---
-df = pd.read_excel("vs.xlsx")
+from pathlib import Path
+excel_path = Path(__file__).parent / "vs.xlsx"
+df = pd.read_excel(excel_path)
+
 df = df.dropna(how='all')
 
 # Clean numeric columns

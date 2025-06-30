@@ -216,6 +216,7 @@ def load_data():
     df['Reply Rate'] = (df['Total Reply Recived'] / df['Total pitches']) * 100
     return df
 
+
 # Load the data
 df = load_data()
 
