@@ -219,7 +219,45 @@ def load_data():
 # Load the data
 df = load_data()
 
+@st.cache_data
+def load_data():
+    try:
+        # Debug: Show current directory and files
+        import os
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        st.write(f"Current directory: {current_dir}")
+        st.write(f"Files in directory: {os.listdir(current_dir)}")
+        
+        # Try multiple possible file paths
+        possible_paths = [
+            "Pitch_Quality_Commitee.xlsx",  # Same directory
+            "./Pitch_Quality_Commitee.xlsx",  # Relative path
+            os.path.join(current_dir, "Pitch_Quality_Commitee.xlsx")  # Absolute path
+        ]
+        
+        for path in possible_paths:
+            try:
+                df = pd.read_excel(path)
+                st.success(f"Successfully loaded file from: {path}")
+                
+                # Data processing
+                df.columns = df.columns.str.strip()
+                df['Last Updated'] = pd.to_datetime(df['Last Updated'], errors='coerce')
+                df['Reply Rate'] = (df['Total Reply Recived'] / df['Total pitches']) * 100
+                return df
+                
+            except Exception as e:
+                st.warning(f"Failed to load from {path}: {str(e)}")
+                continue
+                
+        raise FileNotFoundError("Excel file not found in any attempted paths")
+        
+    except Exception as e:
+        st.error(f"Critical error loading data: {str(e)}")
+        return pd.DataFrame()  # Return empty dataframe as fallback
+
 # ===== Sidebar Filters =====
+
 with st.sidebar:
     st.markdown("## Filters")
     all_sectors = ["All"] + sorted(df['Industry Sector'].dropna().unique().tolist())
