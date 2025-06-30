@@ -7,12 +7,15 @@ import plotly.express as px
 # --- Page Config ---
 st.set_page_config(page_title="Vendor Dashboard", layout="wide")
 
-# --- Load External CSS ---
-def load_css(path):
-    with open(path) as f:
+from pathlib import Path
+
+def load_css(filename):
+    css_path = Path(__file__).parent / filename
+    with open(css_path) as f:
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 load_css("style.css")
+
 
 st.markdown('<div class="navbar">📦 Vendor Management Dashboard</div>', unsafe_allow_html=True)
 
