@@ -4,7 +4,7 @@ import plotly.express as px
 
 # Load data
 from pathlib import Path
-excel_path = Path(__file__).parent / "BuySide.xlsx"
+excel_path = Path(__file__).parent / "InvestorDashboard.xlsx"
 df = pd.read_excel(excel_path)
 
 
