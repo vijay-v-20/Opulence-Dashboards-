@@ -3,7 +3,11 @@ import pandas as pd
 import plotly.express as px
 
 # Load data
-df = pd.read_excel("InvetorDashboard.xlsx")
+from pathlib import Path
+excel_path = Path(__file__).parent / "BuySide.xlsx"
+df = pd.read_excel(excel_path)
+
+
 df = df.dropna(how='all')  # drop blank rows
 
 st.set_page_config(layout="wide")
